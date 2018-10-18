@@ -135,8 +135,8 @@ class StudenteDaoJDBC implements StudenteDao {
 			statement.setString(2, studente.getCognome());
 			long secs = studente.getDataNascita().getTime();
 			statement.setDate(3, new java.sql.Date(secs));
-			statement.setString(4, studente.getMatricola());
-			statement.setString(5, studente.getScuolaDiDiploma().getCodiceMeccanografico());
+			statement.setString(5, studente.getMatricola());
+			statement.setString(4, studente.getScuolaDiDiploma().getCodiceMeccanografico());
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			throw new PersistenceException(e.getMessage());
