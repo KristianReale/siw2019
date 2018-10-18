@@ -1,7 +1,31 @@
 package persistence;
 
+import model.Dipartimento;
+import persistence.dao.DipartimentoDao;
+
 public class Main {
 	public static void main(String args[]) {				
+		try {
+			Class.forName("org.postgresql.Driver").newInstance();
+			DataSource dataSource=new DataSource(
+					"jdbc:postgresql://localhost:5432/Segreteria2019",
+					"postgres","postgres");
+			
+			DipartimentoDao dipDao = new DipartimentoDaoJDBC(dataSource);
+			
+			Dipartimento newDip = new Dipartimento();
+			newDip.setNome("Matematica e Informatica");
+			
+			dipDao.save(newDip);
+			
+			
+			
+			
+			
+		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 					
 	}
 	
