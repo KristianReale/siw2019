@@ -2,11 +2,14 @@ package persistence;
 
 import model.Dipartimento;
 import persistence.dao.DipartimentoDao;
+import java.lang.reflect.InvocationTargetException;
 
 public class Main {
-	public static void main(String args[]) {				
+	public static void main(String args[]) {		
+		
 		try {
-			Class.forName("org.postgresql.Driver").newInstance();
+			Class.forName("org.postgresql.Driver").getConstructor().newInstance();
+			
 			DataSource dataSource=new DataSource(
 					"jdbc:postgresql://localhost:5432/Segreteria2019",
 					"postgres","postgres");
@@ -19,10 +22,8 @@ public class Main {
 			dipDao.save(newDip);
 			
 			
-			
-			
-			
-		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
+		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+				| NoSuchMethodException | SecurityException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
