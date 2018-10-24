@@ -1,32 +1,50 @@
 package persistence;
 
+import model.Corso;
+import model.CorsoDiLaurea;
 import model.Dipartimento;
+import persistence.dao.CorsoDao;
+import persistence.dao.CorsoDiLaureaDao;
 import persistence.dao.DipartimentoDao;
 
 public class Main {
 	public static void main(String args[]) {				
 		try {
 			Class.forName("org.postgresql.Driver").newInstance();
-			DataSource dataSource=new DataSource(
-					"jdbc:postgresql://localhost:5432/Segreteria2019",
-					"postgres","postgres");
+			DataSource dataSource=new DataSource("jdbc:postgresql://localhost:5432/Segreteria2019","postgres","postgres");
+						
+			CorsoDiLaureaDao corsoDiLaureaDao = new CorsoDiLaureaDaoJDBC(dataSource);
+			DipartimentoDao dipartimentoDao = new DipartimentoDaoJDBC(dataSource);
+			CorsoDao corsoDao = new CorsoDaoJDBC(dataSource);
+			Corso corso1 = corsoDao.findAll().get(0);
+			Corso corso2 = corsoDao.findAll().get(1);
 			
-			DipartimentoDao dipDao = new DipartimentoDaoJDBC(dataSource);
+			Dipartimento dipartimento1 = new Dipartimento("Matematica e Informatica");
+			Dipartimento dipartimento2 = new Dipartimento("Biologia");
 			
-			Dipartimento newDip = new Dipartimento();
-			newDip.setNome("Matematica e Informatica");
+			dipartimentoDao.save(dipartimento1);
+			dipartimentoDao.save(dipartimento2);
 			
-			dipDao.save(newDip);
+			CorsoDiLaurea corsoDiLaurea1 = new CorsoDiLaurea();
+			corsoDiLaurea1.setNome("Informatica");
+			corsoDiLaurea1.addCorso(corso1);
+			corsoDiLaurea1.setDipartimento(dipartimento1);
 			
+			CorsoDiLaurea corsoDiLaurea2 = new CorsoDiLaurea();
+			corsoDiLaurea2.setNome("Scienze Biologiche");
+			corsoDiLaurea2.addCorso(corso1);
+			corsoDiLaurea2.addCorso(corso2);
+			corsoDiLaurea2.setDipartimento(dipartimento2);
 			
+			corsoDiLaureaDao.save(corsoDiLaurea1);
+			corsoDiLaureaDao.save(corsoDiLaurea2);
 			
-			
-			
-		} catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
-			// TODO Auto-generated catch block
+			System.out.println("ALL DONE");
+		} 
+		catch (Exception e) {
+			System.err.println("PostgresDAOFactory.class: failed to load MySQL JDBC driver\n"+e);
 			e.printStackTrace();
-		}
-					
+		}			
 	}
 	
 //	private static void reinitDatabase() {
