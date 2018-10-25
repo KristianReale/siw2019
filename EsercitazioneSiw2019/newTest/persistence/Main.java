@@ -13,6 +13,18 @@ public class Main {
 			Class.forName("org.postgresql.Driver").newInstance();
 			DataSource dataSource=new DataSource("jdbc:postgresql://localhost:5432/Segreteria2019","postgres","postgres");
 						
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			CorsoDiLaureaDao corsoDiLaureaDao = new CorsoDiLaureaDaoJDBC(dataSource);
 			DipartimentoDao dipartimentoDao = new DipartimentoDaoJDBC(dataSource);
 			CorsoDao corsoDao = new CorsoDaoJDBC(dataSource);
