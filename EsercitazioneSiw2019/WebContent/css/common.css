@@ -1,0 +1,28 @@
+header {
+	text-align: center;
+}
+
+table{
+	border: 1px solid blue;
+}
+
+th {
+	background-color: red;
+}
+
+td {
+	border: 2px solid black;
+}
+
+
+.moduloRegistrazione {
+	border: 2px solid black;
+	width: 30%;
+}
+
+
+
+
+
+
+
