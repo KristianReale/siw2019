@@ -15,8 +15,9 @@
 <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-
-
+<!-- 
+<link rel="stylesheet" href="css/common.css" type="text/css" />
+ -->
 </head>
 <body bgcolor="cyan">
 <header class="row">
@@ -40,7 +41,7 @@
 </header>
 
 <!-- commento -->
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
 	<ul class="nav navbar-nav">
 		<li>Home</li>
 		<li class="nav-item dropdown">
@@ -51,7 +52,7 @@
 				<li><a  class="dropdown-item" href="gestioneStudenti/iscriviStudenti.html">Iscrivi uno studente</a></li>
 			</ul>
 		</li>
-		<li>Corsi</li>
+		<li class="nav-item dropdown">Corsi</li>
 		<li>Corsi di laurea</li>
 		<li>Dipartimenti</li>
 	</ul>
@@ -69,15 +70,27 @@
 	Ti auguriamo una felice navigazione
 </p>
 
-<section>
-	<article>
+<section class="row container">
+	<article class="col-sm-5 jumbotron">
 		<header>Dicono di noi</header>
 		La segreteria è un servizio di riferimento che serve per...
 	</article>	
-	<article>
+	<div class="col-sm-2"></div>
+	<article class="col-sm-5 jumbotron">
 		<header>Centro ICT di Ateneo</header>
 		Dalla pagine accessibile da <a href="www.unical.it">questo link</a>	
-	</article>	 
+	</article>
+</section>
+<section class="row container">	
+	<article class="col-sm-5 jumbotron">
+		<header><h3>Dicono di noi</h3></header>
+		La segreteria è un servizio di riferimento che serve per...
+	</article>	
+	<div class="col-sm-2"></div>
+	<article class="col-sm-5 jumbotron">
+		<header><h3>Centro ICT di Ateneo</h3></header>
+		Dalla pagine accessibile da <a href="www.unical.it">questo link</a>	
+	</article> 
 </section>
 
 <footer>
