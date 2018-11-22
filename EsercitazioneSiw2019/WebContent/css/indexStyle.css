@@ -21,10 +21,24 @@ article {
 	padding-bottom: 20px;
 	
 	margin-top: 50px;
-	margin-bottom: 50px;
-	
-	
+	margin-bottom: 50px;	
 }
+
+.special .articleHeader{
+	text-shadow: 3px 1px blue;
+}
+
+article+article{
+	position: absolute;
+    left: 50%;  
+}
+
+aside{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
 
 
 
