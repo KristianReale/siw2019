@@ -11,20 +11,26 @@
 	}
 </style>
 
-<link rel="stylesheet" href="css/indexStyle.css" type="text/css" />
+
+<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
 
 </head>
 <body bgcolor="cyan">
-<header>
-	<figure>
+<header class="row">
+	<figure class="col-lg-5 col-md-5 col-sm-4">
 		<a href="images/segreteria.jpg">
-			<img src="images/segreteria.jpg" width="300"/>
+			<img src="images/segreteria.jpg" width="200"/>
 		</a>
 		<figcaption>La nostra segreteria studenti</figcaption>
 	</figure>
-	<h1>Portale segreteria studenti</h1>
-	<h2>Portale gestione segreteria studenti</h2>
-	<aside>
+	<div class="col-lg-2 col-md-2 col-sm-4">
+		<h3>Portale segreteria studenti</h3>
+		<h3>Portale gestione segreteria studenti</h3>
+	</div>
+	<aside class="col-lg-5 col-md-5 col-sm-4">
 		<figure>
 			<a href="http://www.unical.it">
 				<img src="images/logo_unical.png" width="300"/>
@@ -34,15 +40,15 @@
 </header>
 
 <!-- commento -->
-<nav>
-	<ul>
+<nav class="navbar navbar-inverse">
+	<ul class="nav navbar-nav">
 		<li>Home</li>
-		<li>
-			Studenti
-			<ul>
-				<li><a href="gestioneStudenti/studenti.html">Elenco Studenti</a></li>
+		<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Studenti</a>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="gestioneStudenti/studenti.html">Elenco Studenti</a></li>
 				<li>Studenti di un certo corso</li>
-				<li><a href="gestioneStudenti/iscriviStudenti.html">Iscrivi uno studente</a></li>
+				<li><a  class="dropdown-item" href="gestioneStudenti/iscriviStudenti.html">Iscrivi uno studente</a></li>
 			</ul>
 		</li>
 		<li>Corsi</li>
