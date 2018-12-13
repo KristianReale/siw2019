@@ -16,7 +16,7 @@
 <header>
 	<h1>Iscrivi un nuovo studente</h1>
 	<h2>Compila il seguente form</h2>
-	<form id="modulo1" class="form-horizontal" method="post" action="inviaDatiStudente">
+	<form id="modulo1" class="form-horizontal" method="get" action="inviaDatiStudente">
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="matricola">Matricola</label>
 			<div class="col-sm-5">
@@ -29,28 +29,54 @@
 				<input class="form-control" name="nome" type="text" />
 			</div>
 		</div>
-		<div><label class="etichetta" for="cognome">Cognome</label><input class="valore campo" name="cognome campo" type="text" /></div>
-		<div><label class="etichetta" for="dataNascita">Data di nascita</label><input class="valore campo" name="dataNascita" type="date" /></div>
-		<div><label class="etichetta" for="password">Password</label><input class="valore campo" name="password" type="password" /></div>
-		<div><label class="etichetta" for="password2">Conferma Password</label><input class="valore campo" name="password2" type="password" /></div>
-		<div><label class="etichetta" for="dipartimento">Dipartimento</label>
-			<select class="valore campo" name="dipartimento">
-				<option>---</option>
-				<option>Matematica e Informatica</option>
-				<option>Economia</option>
-			</select>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="nome">cognome</label>
+			<div class="col-sm-5">
+				<input class="form-control" name="cognome" type="text" />
+			</div>
 		</div>
-		<div><label class="etichetta" for="corsoDiLaurea">Corso di Laurea</label>
-			<select class="valore campo" name="corsoDiLaurea">
-				<option>---</option>
-				<optgroup label="Matematica e Informatica">
-					<option value="informatica">Informatica</option>
-					<option value="matematica">Matematica</option>
-				</optgroup>
-				<optgroup label="Economia">
-					<option value="ecoAz">Economia Aziendale</option>
-				</optgroup>
-			</select>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="dataNascita">Data di nascita</label>
+			<div class="col-sm-5">
+				<input class="form-control" name="dataNascita" type="date" />
+			</div>
+		</div>	
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="password">Password</label>
+			<div class="col-sm-5">
+				<input class="form-control" name="password" type="password" />
+			</div>
+		</div>	
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="password2">Conferma Password</label>
+			<div class="col-sm-5">
+				<input class="form-control" name="password2" type="password" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="dipartimento">Dipartimento</label>
+			<div class="col-sm-5">				
+				<select class="form-control" name="dipartimento">
+					<option>---</option>
+					<option value="matinf">Matematica e Informatica</option>
+					<option value="eco">Economia</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label col-sm-2" for="corsoDiLaurea">Corso di Laurea</label>
+			<div class="col-sm-5">
+					<select class="form-control" name="corsoDiLaurea">
+						<option>---</option>
+						<optgroup label="Matematica e Informatica">
+							<option value="informatica">Informatica</option>
+							<option value="matematica">Matematica</option>
+						</optgroup>
+						<optgroup label="Economia">
+							<option value="ecoAz">Economia Aziendale</option>
+						</optgroup>
+					</select>
+				</div>
 		</div>
 		<input class="btn btn-success" type="submit" />
 		<input class="btn btn-warning" type="reset" />
