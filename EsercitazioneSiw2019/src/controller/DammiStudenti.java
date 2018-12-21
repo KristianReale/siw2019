@@ -21,7 +21,8 @@ public class DammiStudenti extends HttpServlet{
 		
 		RequestDispatcher rd = req.getRequestDispatcher
 				("gestioneStudenti/studenti.html");
-		rd.include(req, resp);
+		//rd.include(req, resp);
+		rd.forward(req, resp);
 		
 	}
 }
