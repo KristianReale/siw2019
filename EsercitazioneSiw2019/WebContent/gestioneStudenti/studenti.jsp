@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,28 +26,19 @@
 			Cognome
 		</th>
 	</tr>
-	<tr>
-		<td>
-			103123
-		</td>
-		<td>
-			Kristian
-		</td>
-		<td>
-			Reale
-		</td>
-	</tr>
-	<tr>
-		<td>
-			123456
-		</td>
-		<td>
-			Mario
-		</td>
-		<td>
-			Rossi
-		</td>
-	</tr>
+	<c:forEach items="${studenti}" var="stud">
+		<tr>
+			<td>
+				${stud.matricola}
+			</td>
+			<td>
+				${stud.nome}
+			</td>
+			<td>
+				${stud.cognome}
+			</td>
+		</tr>
+	</c:forEach>
 </table>
 </body>
 </html>

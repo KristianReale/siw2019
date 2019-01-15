@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,7 +39,12 @@
 			<a href="http://www.unical.it">
 				<img src="images/logo_unical.png" width="300"/>
 			</a>
-			<h2><a href="doLogin">Login</a></h2>
+			<c:if test="${username != null}">
+				<h2>Benvenuto ${studente.nome} ${studente.cognome} <a href="doLogin?logout=true">Logout</a></h2>
+			</c:if>
+			<c:if test="${username == null}">
+				<h2><a href="doLogin">Login</a></h2>
+			</c:if>
 		</figure>
 	</aside>
 </header>

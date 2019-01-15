@@ -29,7 +29,8 @@ public class CredenzialiLogin extends HttpServlet{
 		}else {
 			if (s.getPassword().equals(password)) {
 				req.getSession().setAttribute("username", username);
-				RequestDispatcher rd = req.getRequestDispatcher("loginOk.html");
+				req.setAttribute("studente", s);
+				RequestDispatcher rd = req.getRequestDispatcher("index.jsp");
 				rd.forward(req, resp);
 			}else {
 				RequestDispatcher rd = req.getRequestDispatcher("loginFailed.html");
