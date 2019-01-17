@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +10,8 @@
 <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css">
 <script src="../js/jquery-3.2.1.min.js"></script>
 <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+<script src="../js/formManager.js"></script>
 
 <link rel="stylesheet" href="../css/common.css" type="text/css" />
 
@@ -56,25 +61,23 @@
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="dipartimento">Dipartimento</label>
 			<div class="col-sm-5">				
-				<select class="form-control" name="dipartimento">
+				<select id="dipart" class="form-control" name="dipartimento" onchange="popolaCorsiLaurea();">
 					<option>---</option>
-					<option value="matinf">Matematica e Informatica</option>
-					<option value="eco">Economia</option>
+					<c:forEach items="${dipartimenti}" var="dip">
+						<option value="${dip.codice}">${dip.nome}</option>
+					</c:forEach>
 				</select>
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="corsoDiLaurea">Corso di Laurea</label>
 			<div class="col-sm-5">
-					<select class="form-control" name="corsoDiLaurea">
+					<select id="cLaurea" class="form-control" name="corsoDiLaurea" disabled>
 						<option>---</option>
-						<optgroup label="Matematica e Informatica">
+						<!-- 
 							<option value="informatica">Informatica</option>
-							<option value="matematica">Matematica</option>
-						</optgroup>
-						<optgroup label="Economia">
-							<option value="ecoAz">Economia Aziendale</option>
-						</optgroup>
+							-->
+						
 					</select>
 				</div>
 		</div>

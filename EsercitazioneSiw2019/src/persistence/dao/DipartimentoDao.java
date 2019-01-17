@@ -2,6 +2,7 @@ package persistence.dao;
 
 import java.util.List;
 
+import model.CorsoDiLaurea;
 import model.Dipartimento;
 
 public interface DipartimentoDao {
@@ -10,4 +11,6 @@ public interface DipartimentoDao {
 	public List<Dipartimento> findAll();       
 	public void update(Dipartimento dipartimento); //Update
 	public void delete(Dipartimento dipartimento); //Delete	
+	
+	public List<CorsoDiLaurea> getCorsiDiLaurea(Dipartimento dipartimento);
 }

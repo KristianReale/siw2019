@@ -9,6 +9,9 @@
 
 <link rel="stylesheet" href="../css/common.css" type="text/css" />
 
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/formManager.js"></script>
+
 </head>
 <body>
 	<header>
@@ -37,8 +40,13 @@
 			<td>
 				${stud.cognome}
 			</td>
+			<td>
+				<input value="Scuola" type="button" onclick="stud = new Studente('${stud.matricola}', '${stud.nome}', '${stud.cognome}');   mostraScuola(stud);" /> 
+			</td>
 		</tr>
 	</c:forEach>
 </table>
+Info Scuola:
+<div id="dettagliScuola"></div>
 </body>
 </html>

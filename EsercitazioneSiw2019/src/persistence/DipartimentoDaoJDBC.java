@@ -1,13 +1,17 @@
 package persistence;
 
+import java.nio.file.ClosedDirectoryStreamException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import model.CorsoDiLaurea;
 import model.Dipartimento;
+import persistence.dao.CorsoDiLaureaDao;
 import persistence.dao.DipartimentoDao;
 
 public class DipartimentoDaoJDBC implements DipartimentoDao {
@@ -135,6 +139,18 @@ public class DipartimentoDaoJDBC implements DipartimentoDao {
 				throw new PersistenceException(e.getMessage());
 			}
 		}
+	}
+	
+	@Override
+	public List<CorsoDiLaurea> getCorsiDiLaurea(Dipartimento dipartimento) {
+		List<CorsoDiLaurea> daRestituire = new ArrayList<CorsoDiLaurea>();
+		CorsoDiLaureaDao cdlDao = DatabaseManager.getInstance().getDaoFactory().getCorsoDiLaureaDAO();
+		for (CorsoDiLaurea cdl : cdlDao.findAll()) {
+			if (cdl.getDipartimento().getCodice() == dipartimento.getCodice()) {
+				daRestituire.add(cdl);
+			}
+		}
+		return daRestituire;
 	}
 
 }

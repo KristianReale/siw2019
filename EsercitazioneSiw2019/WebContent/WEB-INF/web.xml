@@ -23,6 +23,10 @@
   	<servlet-name>IscrizioneStudente</servlet-name>
   	<url-pattern>/gestioneStudenti/inviaDatiStudente</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>IscrizioneStudente</servlet-name>
+  	<url-pattern>/gestioneStudenti/mostraForm</url-pattern>
+  </servlet-mapping>
   
   <servlet>
   	<servlet-name>FaiLogin</servlet-name>
@@ -50,6 +54,25 @@
     <servlet-name>HomeServlet</servlet-name>
     <url-pattern></url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Popola</servlet-name>
+    <servlet-class>controller.PopolaCorsiDiLaurea</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Popola</servlet-name>
+    <url-pattern>/gestioneStudenti/popolaForm</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>Dettagli</servlet-name>
+    <servlet-class>controller.DettagliScuola</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Dettagli</servlet-name>
+    <url-pattern>/dettagliScuola</url-pattern>
+  </servlet-mapping>
+  
   
    
 </web-app>
