@@ -92,7 +92,7 @@ function jsonFlickrFeed(data) {
 			<ul class="dropdown-menu">
 				<li><a class="dropdown-item" href="ottieniStudenti">Elenco Studenti</a></li>
 				<li>Studenti di un certo corso</li>
-				<li><a  class="dropdown-item" href="gestioneStudenti/iscriviStudenti">Iscrivi uno studente</a></li>
+				<li><a  class="dropdown-item" href="gestioneStudenti/mostraForm">Iscrivi uno studente</a></li>
 				<li><a  class="dropdown-item" href="servizi/isee.html">Calcola ISEE</a></li>
 			</ul>
 		</li>
